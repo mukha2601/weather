@@ -44,7 +44,38 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+import { useWeather } from "../store/index"; // adjust your import path if necessary
+import { mapWritableState } from "pinia";
+
+export default {
+  data() {
+    return {
+      WeatherData: null,
+      apiKey: "736e94c1f1904dcd9d033dc1736ae5e6",
+    };
+  },
+  mounted() {
+    this.getWeatherData();
+  },
+  methods: {
+    async getWeatherData() {
+      return await axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${this.region}&appid=${this.apiKey}`
+          // `.https://api.openweathermap.org/data/2.8/onecall?lat=41.311081&lon=69.240562&exclude=minutely,hourly,alerts&appid=${this.apiKey}&units=metric&lang=ru`
+        )
+        .then((response) => {
+          console.log(response.data);
+          this.WeatherData = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    ...mapWritableState(useWeather, ["region"]),
+  },
+};
 </script>
 
 <style scoped></style>

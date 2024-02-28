@@ -9,7 +9,16 @@
 </template>
 
 <script>
-export default {};
+// import { mapState } from "pinia";
+// import { useWeather } from "../store/index";
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    // ...mapState(useWeather, ["WeatherData"]),
+  },
+};
 </script>
 
 <style scoped></style>
