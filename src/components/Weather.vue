@@ -8,7 +8,7 @@
       </div>
       <img src="" alt="" />
     </div>
-    <div class="second h-[10%] flex gap-2 border-2">
+    <div class="second h-[15%] flex gap-2 border-2">
       <div class="flex flex-col border-2">
         <h1>Hozir</h1>
         <p>-1C</p>
@@ -20,7 +20,7 @@
         <img src="" alt="" />
       </div>
     </div>
-    <div class="thirty h-[60%] grid md:grid-cols-2">
+    <div class="thirty h-[55%] grid md:grid-cols-2">
       <div class="left border-2">
         <div class="flex justify-between">
           <p>Seshanba <span>20</span></p>
